@@ -17,7 +17,7 @@ To insert a Zotero citation marker into your document, use your keyboard shortcu
 The Zotero picker should appear; use it as normal and the citation should appear in your text editor.  
 The citation marker appears in your chosen format.  
 See the Zotero RTF/ODF plugin webpage for more information on Scannable Cite.  
-To use a CAYW picker with Pandoc citation markers, use the relevant script or edit the Preferences below.  
+See [Dave Smith's guide](https://davepwsmith.github.io/academic-scrivener-howto/) for more information on using Pandoc.
 
 ## CREDITS ##
 Emma Reisz  
