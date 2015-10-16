@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Zotpicknix by emmareisz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Zotpicknix</h1>
+        <p>Integrating the Zotero Picker in Linux with Scrivener (or another text editor)</p>
+
+        <p class="view"><a href="https://github.com/emmareisz/zotpicknix">View the Project on GitHub <small>emmareisz/zotpicknix</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/emmareisz/zotpicknix/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/emmareisz/zotpicknix/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/emmareisz/zotpicknix">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>The <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix scripts</a> provide Linux users with easy access to the <a href="https://zotplus.github.io/better-bibtex/cayw.html">Better BibTeX workflow</a> for using a floating picker to access Zotero citations in Scrivener (or another editor). This method gives you <strong>live citations</strong> at the end. Setting it up is not for the faint of heart, and you should allow quite a bit of time to get it all working correctly. Once it is working, it is very convenient.</p>
+
+<p>Note that this is an <em>alternative</em> to producing fixed citations by simply opening Zotero, selecting your reference, copying with Ctrl-Shift-A and then pasting into Scrivener. The method below is for those who want their citations to stay live rather than copying dead text.</p>
+
+<h2>
+<a id="preparation" class="anchor" href="#preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparation</h2>
+
+<ol>
+<li>Install the <a href="https://zotplus.github.io/better-bibtex/">Better BibTeX plugin</a> for Zotero. Check that Better BibTeX is running correctly by opening <a href="http://localhost:23119/better-bibtex/cayw?probe=probe">this page</a> while Zotero is running. The word 'ready' should appear in that tab of your browser.</li>
+<li>Install <a href="http://www.semicomplete.com/projects/xdotool/">xdotool</a> on Linux (in the package archives of most distributions).<br>
+</li>
+<li>You will now need to decide which of two citation marker systems you want to use: <strong>Scannable-Cite</strong> or <strong>Pandoc</strong>. If you write in some flavour of Markdown, pick Pandoc. If you like to edit in a word processor after you have finished in Scrivener, pick Scannable-Cite. If neither applies, you can use either method.<br>
+</li>
+</ol>
+
+<h3>
+<a id="set-up-scannable-cite" class="anchor" href="#set-up-scannable-cite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set-Up: Scannable-Cite</h3>
+
+<ol>
+<li>Go to the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix</a> site and download and install the zotpicknix-sc script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory.<br>
+</li>
+<li>Create a system keyboard shortcut to zotpicknix-sc . (This is necessary because the built-in citation integration in Scrivener does not seem to call Linux executables correctly.)<br>
+</li>
+<li>Install the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/">RTF/ODT plugin</a> for Zotero.<br>
+</li>
+<li>Make sure Zotero's LO/OO plugin is installed (Zotero/Preferences/Cite/Word Processors).<br>
+</li>
+</ol>
+
+<h3>
+<a id="set-up-pandoc" class="anchor" href="#set-up-pandoc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set-Up: Pandoc</h3>
+
+<ol>
+<li>Go to the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix</a> site and download and install the zotpicknix-pd script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory.<br>
+</li>
+<li>Create a system keyboard shortcut to zotpicknix-pd . (This is necessary because the built-in citation integration in Scrivener does not seem to call Linux executables correctly.)<br>
+</li>
+<li>Install <a href="http://pandoc.org/">pandoc</a> (in the package repositories of most Linux distributions).<br>
+</li>
+<li>In Zotero, go to the library you want to use for citations and right-click; select 'Export/Format: Better BibTeX' and check 'Keep Updated'. Choose a suitable location for your export.<br>
+</li>
+</ol>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li>Make sure Zotero is running. In Scrivener, place the cursor where you want the reference to go. When it is in the correct location, enter your keyboard shortcut for your script. <strong>Any text you have selected will be overwritten.</strong><br>
+</li>
+<li>The little Zotero picker window should appear.</li>
+<li>In the picker, select the item you want to cite from your library. When you have selected it, double-click on the reference to get more options (page locators, prefix etc.).<br>
+</li>
+<li>When you have added all the citations you need in that reference, press Enter.<br>
+</li>
+<li>Some strange-looking text will now appear in Scrivener wherever you left the cursor. This is a citation marker. If you are using Scannable-Cite, it will look like this: <code>{ | Smith, (2012) | | |zu:2433:WQVBH98K}</code> . If you are using Pandoc, it will look like this <code>[@smith_test_2012]</code>.<br>
+</li>
+<li>Continue writing your text and inserting references until you have finished your work. When you have finished, you will need to compile and process your work.<br>
+</li>
+</ol>
+
+<h3>
+<a id="processing-citations-scannable-cite" class="anchor" href="#processing-citations-scannable-cite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Processing Citations: Scannable-Cite</h3>
+
+<ol>
+<li>Compile your document. If you use footnotes, you must do this as .rtf because Scrivener will not export footnotes to .odt.<br>
+</li>
+<li>If you had to compile as .rtf, use your LibreOffice or OpenOffice to save as .odt.<br>
+</li>
+<li>Open Zotero and select Tools/RTF Scan. Choose 'ODF to citations' and select the .odt document you have just created. Enter a suitable name for the new .odt document you are creating and click Next.<br>
+</li>
+<li>You will now have an .odt document with live citations. You can work with this as normal in LibreOffice/OpenOffice. You can process the citations in the familiar way using the Zotero add-on for LO/OO: select a style, create a bibliography, etc. The citations will stay live as long as the document is in .odt. If you save it as .doc, .rtf etc., the citations will become fixed.<br>
+</li>
+</ol>
+
+<h3>
+<a id="processing-citations-pandoc" class="anchor" href="#processing-citations-pandoc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Processing Citations: Pandoc</h3>
+
+<ol>
+<li>Compile your document as required. Most compile formats are suitable for Pandoc, though it works particularly well with Markdown. Note that Scrivener cannot compile footnotes to .odt.<br>
+</li>
+<li>To process the citations in your compiled document, open the terminal and run the following command: 
+<code>pandoc --filter pandoc-citeproc --bibliography BIBLIOGRAPHY.bib --csl STYLE.csl -o outputfile inputfile</code>.
+(For BIBLIOGRAPHY.bib, give the file path to the library you exported during installation. For STYLE.csl, give the file path to your chosen csl style file. Set the input and output filenames as needed. For more information, see <a href="http://pandoc.org/README.html">here</a>.) Your citations are now fixed in the output file.</li>
+<li>ALTERNATIVELY, if you are using Markdown and want HTML output, you can process the citations via a GUI by using Atom with Markdown Preview Plus. This will process and display your citations as html. You can then save the output by right-clicking in the preview window.<br>
+</li>
+<li>More information on Pandoc/Scrivener workflows is available <a href="https://davepwsmith.github.io/academic-scrivener-howto/">from Dave Smith</a> (written for Mac users).</li>
+</ol>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/emmareisz">emmareisz</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
