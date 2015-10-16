@@ -33,24 +33,25 @@
 
 <p>The <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix scripts</a> provide Linux users with easy access to the <a href="https://zotplus.github.io/better-bibtex/cayw.html">Better BibTeX workflow</a> for using a floating picker to access Zotero citations in Scrivener (or another editor). This method gives you <strong>live citations</strong> at the end. There are quite a few steps to setting it up, and you should allow plenty of time to get it all working correctly. Once it is working, it is very convenient.</p>
 
-<p>Note that this is an <em>alternative</em> to producing fixed citations by simply opening Zotero, selecting your reference, copying with Ctrl-Shift-A and then pasting into Scrivener. The method below is for those who want their citations to stay live rather than copying dead text.</p>
+<p>Note that this is an <em>alternative</em> to producing citations by simply opening Zotero, selecting your reference, copying with Ctrl-Shift-A and then pasting into Scrivener. The method below is for those who want to be able to access the Zotero Picker from within Scrivener and to get live citations at the end rather than fixed text.</p>
 
 <h2>
-<a id="preparation" class="anchor" href="#preparation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preparation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
 
 <ol>
-<li>Install the <a href="https://zotplus.github.io/better-bibtex/">Better BibTeX plugin</a> for Zotero. Check that Better BibTeX is running correctly by opening <a href="http://localhost:23119/better-bibtex/cayw?probe=probe">this page</a> while Zotero is running. The word 'ready' should appear in that tab of your browser.</li>
+<li>Install the <a href="https://zotplus.github.io/better-bibtex/">Better BibTeX plugin</a> for Zotero. Install it <strong><em>either</em></strong> for Zotero Firefox <strong>or</strong> for Standalone, but <strong>not both</strong>. If you are using Zotero for Firefox, go to Zotero Preferences/Better BibTex/ImportExport and check 'Enable export by HTTP'; restart Firefox. </li>
+<li>Confirm Better BibTeX is set up correctly by opening <a href="http://localhost:23119/better-bibtex/cayw?probe=probe">this page</a> while Zotero is running. The word 'ready' should appear in that tab of your browser.</li>
 <li>Install <a href="http://www.semicomplete.com/projects/xdotool/">xdotool</a> on Linux (in the package archives of most distributions).<br>
 </li>
-<li>You will now need to decide which of two citation marker systems you want to use: <strong>Scannable-Cite</strong> or <strong>Pandoc</strong>. If you write in some flavour of Markdown, pick Pandoc. If you like to edit in a word processor after you have finished in Scrivener, pick Scannable-Cite. If neither applies, you can use either method.<br>
+<li>You will now need to decide which of two citation marker systems you want to use: either <strong>Scannable-Cite</strong> or <strong>Pandoc</strong>. If you write in some flavour of Markdown or LaTeX, pick Pandoc. If you like to edit in a word processor after you have finished in Scrivener, pick Scannable-Cite. If neither applies, you can use either method.<br>
 </li>
 </ol>
 
 <h3>
-<a id="set-up-scannable-cite" class="anchor" href="#set-up-scannable-cite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set-Up: Scannable-Cite</h3>
+<a id="installation-cont-scannable-cite" class="anchor" href="#installation-cont-scannable-cite" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation cont.: Scannable-Cite</h3>
 
 <ol>
-<li>Go to the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix</a> site and download and install the zotpicknix-sc script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory.<br>
+<li>If you will be using Scannable-Cite markers, go to the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix</a> site and download and install the zotpicknix-sc script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory.<br>
 </li>
 <li>Create a system keyboard shortcut to zotpicknix-sc . (This is necessary because the built-in citation integration in Scrivener does not seem to call Linux executables correctly.)<br>
 </li>
@@ -61,10 +62,10 @@
 </ol>
 
 <h3>
-<a id="set-up-pandoc" class="anchor" href="#set-up-pandoc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set-Up: Pandoc</h3>
+<a id="installation-cont-pandoc" class="anchor" href="#installation-cont-pandoc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation cont.: Pandoc</h3>
 
 <ol>
-<li>Go to the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix</a> site and download and install the zotpicknix-pd script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory.<br>
+<li>If you will be using Pandoc markers, go to the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix</a> site and download and install the zotpicknix-pd script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory.<br>
 </li>
 <li>Create a system keyboard shortcut to zotpicknix-pd . (This is necessary because the built-in citation integration in Scrivener does not seem to call Linux executables correctly.)<br>
 </li>
@@ -97,7 +98,7 @@
 <ol>
 <li>Compile your document. If you use footnotes in Scrivener, you must compile as .rtf because Scrivener will not export footnotes to .odt.<br>
 </li>
-<li>If you compiled as .rtf, use your LibreOffice or OpenOffice to save as .odt.<br>
+<li>If you compiled as .rtf, use LibreOffice or OpenOffice to save as .odt.<br>
 </li>
 <li>Open Zotero and select Tools/RTF Scan. Choose 'ODF to citations' and select the .odt document you have just created. Enter a suitable name for the new .odt document you are creating and click Next. For more information, see <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/">here</a>.<br>
 </li>
