@@ -1,4 +1,5 @@
 ---
+title: Usage Guide
 layout: default
 ---
 ## About ##
