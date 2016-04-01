@@ -28,23 +28,44 @@
         </ul>
       </header>
       <section>
-        <hr>
-
-<h2>
-<a id="layout-default" class="anchor" href="#layout-default" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>layout: default</h2>
-
-<h2>
+        <h2>
 <a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h2>
 
-<p>The <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix scripts</a> provide Linux users with easy access to the <a href="https://zotplus.github.io/better-bibtex/cayw.html">Better BibTeX workflow</a> for using a floating picker to access Zotero citations in Scrivener (or another editor). This method gives you <strong>live citations</strong> at the end. There are a few steps to setting it up, but once it is working, it is very convenient.</p>
+<p>This is a guide to using the <a href="https://github.com/emmareisz/zotpicknix">Zotpicknix scripts</a>. These scripts can be used alongside other tools to provide a workflow in Linux for integrating Scrivener and Zotero. The result is <strong>live citations</strong> in either LibreOffice or Markdown/LaTeX.  </p>
 
-<p>Note that this is an <em>alternative</em> to producing citations by simply opening Zotero, selecting your reference, copying with Ctrl-Shift-A and then pasting into Scrivener. The benefit of the method below is that it allows you to access the Zotero Picker from within Scrivener.</p>
+<h3>
+<a id="is-zotpicknix-right-for-me" class="anchor" href="#is-zotpicknix-right-for-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Is zotpicknix right for me?</h3>
+
+<p>The zotpicknix workflow offers access to a Zotero picker from inside Scrivener, and it produces live citations. <a href="https://www.literatureandlatte.com/forum/viewtopic.php?f=33&amp;t=32659&amp;start=0#p205160">Using a floating picker</a> reduces writing distraction and is ideal on smaller monitors.</p>
+
+<blockquote>
+<p>An <strong><em>old-school workflow</em></strong> with less set-up is to open Zotero, select your reference, copy it with Ctrl-Shift-A and then paste into Scrivener. The reference will be formatted in whatever style is selected in Zotero Preferences under Export/Default Output Format.<br>
+If the default output format is a citation style (e.g. Chicago), the text will be fixed, i.e. your reference will not update if you edit the Zotero record, and you cannot change that reference into a different style.<br>
+If the default is set to <strong>Scannable-Cite</strong> markers (RTF/ODT add-on required) or <strong>Pandoc Citation</strong> markers, your references will remain live, and can be turned into citations as described below under 'Processing'.</p>
+</blockquote>
+
+<h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works</h3>
+
+<p>(Don't need the details? Skip to the <a href="##installation">Installation section</a>.) This Scrivener-Zotero Linux workflow has the following elements:  </p>
+
+<ul>
+<li>
+<strong>Floating picker</strong> (from the Better BibTeX Zotero add-on): we use this to make Zotero citations easily available while working in Scrivener (or another editor of your choice).<br>
+</li>
+<li>
+<strong>zotpicknix scripts</strong>. We use these to copy citation markers from the Better BibTeX picker into Scrivener.</li>
+<li>
+<strong><em>either:</em></strong> the <strong>RTF/ODT</strong> Zotero add-on <em>plus</em> the <strong>OO/LO</strong> Zotero add-in. These turn citation markers into live citations in LibreOffice.</li>
+<li>
+<strong><em>or:</em></strong> <strong>Pandoc</strong> text processor <em>plus</em> the <strong>Better BibTeX</strong> Zotero add-on. These take citation markers in a markup format such as Markdown/LaTeX etc. and produce correctly formatted citations in the output (using a .bib file kept in sync with our Zotero library).</li>
+</ul>
 
 <h2>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
 <ol>
-<li>Install the <a href="https://zotplus.github.io/better-bibtex/">Better BibTeX plugin</a> for Zotero. Install it <strong><em>either</em></strong> for Zotero Firefox <strong>or</strong> for Standalone, but <strong>not both</strong>. If you are using Zotero for Firefox, go to Zotero Preferences/Better BibTex/ImportExport and check 'Enable export by HTTP'; restart Firefox.</li>
+<li>Install the <a href="https://zotplus.github.io/better-bibtex/">Better BibTeX add-on</a> for Zotero. Install it <strong><em>either</em></strong> for Zotero Firefox <strong>or</strong> for Standalone, but <strong>not both</strong>. If you are using Zotero for Firefox, go to Zotero Preferences/Better BibTex/ImportExport and check 'Enable export by HTTP'; restart Firefox.</li>
 <li>Confirm Better BibTeX is set up correctly by opening <a href="http://localhost:23119/better-bibtex/cayw?probe=probe">this page</a> while Zotero is running. The word 'ready' should appear in that tab of your browser.</li>
 <li>Install <a href="http://www.semicomplete.com/projects/xdotool/">xdotool</a> on Linux (in the package archives of most distributions).<br>
 </li>
@@ -59,9 +80,9 @@
 <li>For <strong>Scannable-Cite</strong> markers, <a href="https://github.com/emmareisz/zotpicknix">download</a> the zotpicknix-sc script. Mark the script as executable and save it in your PATH, e.g. in a folder called 'bin' in your Home directory. If you want to create citations in a text editor other than Scrivener, you will need to edit the script (see the README.md).<br>
 </li>
 <li>Create a system keyboard shortcut to wherever you saved the script. (This is necessary because the built-in citation integration in Scrivener does not call Linux executables correctly.)</li>
-<li>Install the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/">RTF/ODT plugin</a> for Zotero.<br>
+<li>Install the <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/">RTF/ODT add-on</a> for Zotero.<br>
 </li>
-<li>Make sure Zotero's LO/OO plugin is installed (Zotero/Preferences/Cite/Word Processors).<br>
+<li>Make sure Zotero's LO/OO add-in is installed (Zotero/Preferences/Cite/Word Processors).<br>
 </li>
 </ol>
 
@@ -106,7 +127,7 @@
 </li>
 <li>Open Zotero and select Tools/RTF Scan. Choose 'ODF to citations' and select the .odt document you have just created. Enter a suitable name for the new .odt document you are creating and click Next. For more information, see <a href="https://zotero-odf-scan.github.io/zotero-odf-scan/">here</a>.<br>
 </li>
-<li>You will now have an .odt document with live citations. You can work with this as normal in LibreOffice/OpenOffice. You can process the citations in the familiar way using the Zotero add-on for LO/OO: select a style, create a bibliography, etc. The citations will stay live as long as the document is in .odt. If you save it as .doc, .rtf etc., the citations will become fixed.<br>
+<li>You will now have an .odt document with live citations. You can work with this as normal in LibreOffice/OpenOffice. You can process the citations in the familiar way using the Zotero add-in for LO/OO: select a style, create a bibliography, etc. The citations will stay live as long as the document is in .odt. If you save it as .doc, .rtf etc., the citations will become fixed.<br>
 </li>
 </ol>
 
